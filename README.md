@@ -50,7 +50,7 @@ With telemetry levels:
 }
 ```
 
-### Detection Payload Example
+### Detection Payload
 The detection topic will contain payloads of detected uuids with timestamp.
 
 ```
