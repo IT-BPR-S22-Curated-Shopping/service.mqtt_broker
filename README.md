@@ -5,7 +5,6 @@ HiveMQ Cloud hosted on Azure is used as API between the backend service and the 
 ## Connection
 See Examples.
 
-## Topics
 
 ## Topics
 
@@ -14,23 +13,49 @@ See Examples.
     - telemetry 
     - detection 
 
+### Status Payload
+The status topic will hold the device connection state.
+
+Values:
+- ONLINE
+- OFFLINE
+
+OFFLINE is set by MQTT broker via last will:
+
+```
+will: {
+    topic: 'companyId/deviceId/status',
+    payload: 'OFFLINE',
+    qos: 2,
+    retain: true
+}
+```
+
+### Telemetry Payload
+The telemetry topic will contain device specific data wrapped in the format:
+
+```
+{
+    level: telemetryLevel,
+    message: "string"
+}
+```
+
+With telemetry levels:
+```
+{
+    info: "info",
+    warning: "warning",
+    error: "error"
+}
+```
+
 ### Detection Payload Example
 
 ```
 {
   "uuid": "010D2108-0462-4F97-BAB8-000000000002",
-  "major": 2,
-  "minor": 0,
-  "mac": "41:62:47:29:93:2d",
-  "time": 1651140793666,
-  "updated": 1651140831334,
-  "rssi": -64.07905794297476,
-  "distance": "4.02",
-  "observations": [
-    -64.71625183479372,
-    -63.98224398108878,
-    -64.07905794297476
-  ]
+  "time": 1651140793666
 }
 ```
 
