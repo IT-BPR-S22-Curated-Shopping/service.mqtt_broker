@@ -1,0 +1,8 @@
+{
+    "company": "<company id>",
+    "device": 
+    {
+      "id": "<device id>",
+      "type": "<device type>"
+    }
+}
