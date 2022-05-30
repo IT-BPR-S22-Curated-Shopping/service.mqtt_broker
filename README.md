@@ -32,3 +32,5 @@ https://websocketclient.hivemq.cloud/?username=app_monitor&host=637b798f8004424f
 
 Enter password and connect.
 
+## API sequnece
+<img src="./api.svg">
